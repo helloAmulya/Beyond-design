@@ -4,11 +4,529 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Guitar kaksha</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- FontAwesome CDN for Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+    <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
+
+
+
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+
+
+
 </head>
 
 <body>
 
+
+    <!-- header -->
+    <header
+        class="flex items-center w-full md:px-[2vw] px-[3vw] backdrop-blur bg-[#07080c] bg-opacity-[0.2] fixed h-[vw] justify-between left-0 md:h-[6vw] md:py-[0.6vw] text-black top-0 z-[99999]">
+        <div class="hidden md:block logo">
+            <img alt="Guitar Kaksha Logo" class="hidden md:block lozad md:w-[15vw]" src="./assets/logo_white.png">
+        </div>
+        <div class="h-full absolute gap-[1.5vw] hidden left-[50%] md:flex text-white translate-x-[-50%]">
+            <a href="#" class="flex items-center magnet-effect inline-block text-[1.45vw]">Home</a>
+            <a href="#" class="flex items-center magnet-effect inline-block text-[1.45vw]">About Us</a>
+            <a href="#" class="flex items-center magnet-effect inline-block text-[1.45vw]">Contact</a>
+            <a href="#" class="flex items-center magnet-effect inline-block text-[1.45vw]">Blogs</a>
+            <a href="#pricing" class="flex items-center magnet-effect inline-block text-[1.45vw]">Courses</a>
+        </div>
+        <div class="hidden absolute md:flex gap-[2vw] right-[2vw]">
+            <div class="dropdown relative" id="loginDropdown">
+                <button class="text-white magnet-effect text-[1.45vw]" aria-expanded="false"
+                    data-bs-toggle="dropdown">Login</button>
+                <div class="h-0 absolute left-0 overflow-hidden top-[100%] login-dropdown-menu">
+                    <ul class="flex text-black bg-white flex-col gap-[0.5vw] mt-[1.5vw] px-[1vw] py-[0.5vw]"
+                        aria-labelledby="loginDropdown">
+                        <li><a href="https://guitarkaksha.com/dashboard/login.php"
+                                class="flex items-center text-[1.45vw] dropdown-item whitespace-nowrap">One To One</a>
+                        </li>
+                        <li><a href="https://web.classplusapp.com/login"
+                                class="flex items-center text-[1.45vw] dropdown-item whitespace-nowrap">Group
+                                Classes</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="dropdown relative" id="recommendationsDropdown">
+                <button class="text-white magnet-effect text-[1.45vw]" aria-expanded="false"
+                    data-bs-toggle="dropdown">Recommendations</button>
+                <div class="h-0 absolute left-0 overflow-hidden top-[100%] recommendations-dropdown-menu">
+                    <ul class="flex text-black bg-white flex-col gap-[0.5vw] mt-[1.5vw] px-[1vw] py-[0.5vw]"
+                        aria-labelledby="loginDropdown">
+                        <li><a href="https://guitarkaksha.com/recommendations.html"
+                                class="flex items-center text-[1.45vw] dropdown-item whitespace-nowrap">Guitar</a></li>
+                        <li><a href="https://guitarkaksha.com/recommendations.html#guitarStrings"
+                                class="flex items-center text-[1.45vw] dropdown-item whitespace-nowrap">Guitar
+                                Strings</a></li>
+                        <li><a href="https://guitarkaksha.com/recommendations.html#otherAccessories"
+                                class="flex items-center text-[1.45vw] dropdown-item whitespace-nowrap">Accessories</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="flex items-center w-full relative gap-[3vw] justify-between md:hidden text-white">
+            <a href="#pricing">
+                <button class="text-[4.5vw] px-[1vw] py-[0.5vw] bg-orange-500 rounded-md">Courses</button>
+            </a>
+            <div class="logo">
+                <img alt="Guitar Kaksha" class="w-[35vw] md:w-[15vw]" src="./assets/logo_white.png">
+            </div>
+            <button
+                class="h-fit border-[1px] border-white justify-center menu-btn px-[3vw] py-[2vw] rounded-md text-[5vw] z-[9999999]">
+                <div class="flex items-center justify-center flex-col relative gap-[1.8vw] h-[4.8vw] w-[5vw]">
+                    <div class="w-full bg-white h-[0.6vw] menu-line"></div>
+                    <div class="w-full bg-white h-[0.6vw] menu-line"></div>
+                </div>
+            </button>
+        </div>
+        <div
+            class="w-full px-[3vw] fixed left-0 top-0 bg-black md:hidden min-h-[120vh] mobile-menu py-[20vw] translate-x-[100%] z-[999999]">
+            <div
+                class="flex items-center justify-center w-full flex-col text-white bg-black font-barlow-condensed gap-[1vw] text-[7vw]">
+                <img alt="card-border" class="w-full mb-[10vw]" src="./assets/card-border.svg">
+                <a href="https://guitarkaksha.com/index.html">
+                    <h2 class="flex items-center text-[7vw] mobile-nav-item">Home</h2>
+                </a>
+                <a href="https://guitarkaksha.com/aboutus.html">
+                    <h2 class="flex items-center text-[7vw] mobile-nav-item">About Us</h2>
+                </a>
+                <a href="https://guitarkaksha.com/contact.html">
+                    <h2 class="flex items-center text-[7vw] mobile-nav-item">Contact</h2>
+                </a>
+                <a href="https://guitarkaksha.com/blog-main.php">
+                    <h2 class="flex items-center text-[7vw] mobile-nav-item">Blogs</h2>
+                </a>
+                <h2 class="flex items-center text-[7vw] mobile-nav-item dropdown-toggle">Recommendations</h2>
+                <h2 class="flex items-center text-[7vw] mobile-nav-item dropdown-toggle">Login</h2>
+                <img alt="card-border" class="w-full rotate-[180deg] mt-[10vw]" src="./assets/card-border.svg">
+            </div>
+            <div class="flex items-center flex-col">
+                <img alt="guitar kaksha" class="w-[70%] m-auto mt-[10vw]" src="./assets/logo_white.png">
+                <a href="https://wa.me/message/GA6OYJ54LREHN1"
+                    class="flex inline-block overflow-hidden gap-[0.5vw] h-[8vw] md:h-[3.5vw] md:px-[1vw] px-[2vw] w-fit bg-[#e94a2a] fd-container md:mt-[3vw] rounded-b-md rounded-tl-md mt-[7vw]">
+                    <span class="flex items-center justify-center h-full inline-block">
+                        <i class="text-black text-[6vw] font-bold md:text-[2.5vw] ri-arrow-right-up-line"></i>
+                    </span>
+                </a>
+            </div>
+        </div>
+
+    </header>
+
+
+    <!-- hero section -->
+    <section
+        class="bg-[url('assets/pexels-stephendn-54133.jpg')] bg-cover bg-center md:h-[90vh] text-white py-16 sm:mt-20 md:mt-[5.5rem] relative">
+
+        <!-- Vignette Background -->
+        <div class="absolute top-0 left-0 right-0 bottom-0 bg-gradient-to-b from-black via-transparent to-black"></div>
+
+        <!-- Content Wrapper -->
+        <div class="flex items-center justify-center w-full flex-col relative z-10">
+            <!-- Decorative Line and Circles -->
+            <div class="flex items-center justify-center gap-[2vw] mt-10 md:mt-6">
+                <div class="h-[1px] md:w-[10vw] w-[15vw] bg-[#fff]"></div>
+                <div class="flex items-center justify-center gap-[0.5vw] h-[6vw] md:h-[3vw]">
+                    <div class="flex items-center justify-center h-full md:w-[2vw] w-[5vw]">
+                        <div class="h-[3vw] md:h-[1vw] md:w-[1vw] rounded-full w-[3vw] bg-[#e94a2a]"></div>
+                    </div>
+                    <div class="flex items-center justify-center h-full md:w-[2vw] w-[5vw]">
+                        <div class="h-[3vw] md:h-[1vw] md:w-[1vw] rounded-full w-[3vw] bg-[#ebb31a]"></div>
+                    </div>
+                    <div class="flex items-center justify-center h-full md:w-[2vw] w-[5vw]">
+                        <div class="h-[3vw] md:h-[1vw] md:w-[1vw] rounded-full w-[3vw] bg-[#e94a2a]"></div>
+                    </div>
+                </div>
+                <div class="h-[1px] md:w-[10vw] w-[15vw] bg-[#fff]"></div>
+            </div>
+
+            <!-- Headings and Button -->
+            <h1
+                class="text-white text-center font-extrabold md:mt-[0vw] md:text-[3.8vw] md:leading-[4vw] mt-[5vw] py-[0.8vw] rounded-md shrink-0 text-[10vw] leading-[9vw] w-[90%] md:w-[100%]">
+                <span>INDIA'S</span> <span>TRUSTED</span> <span>ONLINE</span> <span>GUITAR</span>
+                <span>CLASSES</span>
+            </h1>
+
+            <div class="flex items-center justify-center w-full flex-col md:px-[2vw] px-[3vw] md:mt-[2vw] mt-[5vw]">
+                <h2
+                    class="text-center md:text-[2.5vw] md:font-[400] font-[600] leading-none text-[6.5vw] w-full tracking-tight md:tracking-normal">
+                    LEARN YOUR FIRST SONG IN JUST 7 DAYS
+                </h2>
+
+                <!-- Spacing between the paragraph and button -->
+                <div class="mt-[3vw]"></div>
+
+                <!-- Animated Button -->
+                <a href="https://wa.me/message/GA6OYJ54LREHN1"
+                    class="flex items-center justify-center gap-[0.5vw] h-[8vw] md:h-[3.5vw] md:px-[2vw] px-[4vw] w-fit bg-gradient-to-r from-[#e94a2a] to-[#ebb31a] rounded-md hover:scale-105 hover:shadow-lg transform transition-all duration-300">
+                    <span class="text-white font-[600] md:text-[2vw] text-[5vw] uppercase">Free Demo</span>
+                    <i class="text-white text-[6vw] font-bold md:text-[2.5vw] ri-arrow-right-up-line"></i>
+                </a>
+            </div>
+
+            <!-- Round Images -->
+
+            <!-- Single for mobiles -->
+            <div class="mt-[3vw] block sm:hidden">
+                <img src="./assets/hero2.webp" alt="Card Image"
+                    class="rounded-full w-[50vw] h-[50vw] object-cover shadow-lg border-4 border-white">
+            </div>
+
+            <!-- Multiple for large devices -->
+            <div class="hidden sm:flex sm:justify-center sm:gap-[2vw] sm:mt-[6vw]">
+                <img src="./assets/hero1.webp" alt="Card Image 1"
+                    class="rounded-full w-[15vw] h-[15vw] object-cover shadow-lg border-4 border-white opacity-0 animate-reveal delay-200">
+                <img src="./assets/hero2.webp" alt="Card Image 2"
+                    class="rounded-full w-[15vw] h-[15vw] object-cover shadow-lg border-4 border-white opacity-0 animate-reveal delay-200">
+                <img src="./assets/hero3.webp" alt="Card Image 3"
+                    class="rounded-full w-[15vw] h-[15vw] object-cover shadow-lg border-4 border-white opacity-0 animate-reveal delay-200">
+            </div>
+        </div>
+    </section>
+
+
+    <!-- special features  -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto">
+            <h2 class="text-4xl font-semibold text-center mb-10">Special Features</h2>
+
+            <!-- cards -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+
+                <!-- card 1: Interactive Sessions -->
+                <div
+                    class="card p-6 bg-gradient-to-b from-blue-100 to-white rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 flex flex-col items-center text-center">
+                    <div class="bg-blue-600 p-4 rounded-full mb-4">
+                        <i class="fas fa-chalkboard-teacher text-white text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-blue-600 mb-2">Interactive Sessions</h3>
+                    <p class="mt-2 text-gray-700">Engaging and interactive online guitar classes that make learning fun.
+                    </p>
+                </div>
+
+                <!-- card 2: Flexible Scheduling -->
+                <div
+                    class="card p-6 bg-gradient-to-b from-green-100 to-white rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 flex flex-col items-center text-center">
+                    <div class="bg-green-600 p-4 rounded-full mb-4">
+                        <i class="fas fa-clock text-white text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-green-600 mb-2">Flexible Scheduling</h3>
+                    <p class="mt-2 text-gray-700">Learn guitar online at your own pace with no pressure.</p>
+                </div>
+
+                <!-- card 3: Tailored Courses -->
+                <div
+                    class="card p-6 bg-gradient-to-b from-yellow-100 to-white rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 flex flex-col items-center text-center">
+                    <div class="bg-yellow-600 p-4 rounded-full mb-4">
+                        <i class="fas fa-cogs text-white text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-yellow-600 mb-2">Tailored Courses</h3>
+                    <p class="mt-2 text-gray-700">Courses customized to your needs and goals for personalized learning.
+                    </p>
+                </div>
+
+                <!-- card 4: Curated Song Choices -->
+                <div
+                    class="card p-6 bg-gradient-to-b from-purple-100 to-white rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 flex flex-col items-center text-center">
+                    <div class="bg-purple-600 p-4 rounded-full mb-4">
+                        <i class="fas fa-music text-white text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-purple-600 mb-2">Curated Song Choices</h3>
+                    <p class="mt-2 text-gray-700">Select your favorite songs to learn, whether you’re into pop,
+                        classical, or alternative music.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- course cards -->
+
+    <section id="cards-section"
+        class="min-h-screen flex items-center justify-center bg-gray-500 bg-gradient-to-l from-black via-transparent to-black py-[4vw] md:py-0">
+        <div class="flex flex-wrap justify-center gap-6 w-full px-4">
+            <!-- Card 1 -->
+            <div
+                class="card bg-white text-gray-800 rounded-lg  p-4 w-[85%] md:w-[30vw] opacity-100 transform transition-transform duration-500 hover:scale-105 ">
+                <button class="bg-red-500 text-white rounded-full px-4 py-2 flex items-center gap-2">
+                    <i class="fa fa-video-camera"></i> Live Classes
+                </button>
+                <h4 class="text-center font-semibold text-xl md:text-2xl mt-4 text-gray-900">Beginner Guitar Program
+                </h4>
+                <div class="flex justify-between items-center mt-4">
+                    <span class="text-xl md:text-2xl font-bold text-gray-800">₹1999</span>
+                    <div class="relative text-lg text-gray-500">
+                        <span class="line-through text-green-400">₹3000</span>
+                    </div>
+                </div>
+                <h5 class="text-center font-medium text-lg md:text-xl mt-4 text-gray-700">2-Months Program</h5>
+                <ul class="text-base md:text-lg mt-4 space-y-2 text-gray-600">
+                    <li><i class="fa fa-calendar"></i> Start Date: November 21st, 2024</li>
+                    <li><i class="fa fa-laptop"></i> Platform: Zoom</li>
+                    <li><i class="fa fa-certificate"></i> Certification upon completion</li>
+                </ul>
+                <div class="mt-6 text-center">
+                    <a href="https://courses.guitarkaksha.com/courses/592512"
+                        class="bg-[#f1ab27] hover:bg-[#d99b1f] text-black rounded-full px-6 py-2 mt-4 inline-block transition-colors duration-300">
+                        More Details <i class="fa fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div
+                class="card bg-white text-gray-800 rounded-lg  p-4 w-[85%] md:w-[30vw] opacity-100 transform transition-transform duration-500 hover:scale-105 ">
+                <button class="bg-red-500 text-white rounded-full px-4 py-2 flex items-center gap-2">
+                    <i class="fa fa-video-camera"></i> Live Classes
+                </button>
+                <h4 class="text-center font-semibold text-xl md:text-2xl mt-4 text-gray-900">Intermediate Guitar Program
+                </h4>
+                <div class="flex justify-between items-center mt-4">
+                    <span class="text-xl md:text-2xl font-bold text-gray-800">₹2999</span>
+                    <div class="relative text-lg text-gray-500">
+                        <span class="line-through text-green-400">₹4000</span>
+                    </div>
+                </div>
+                <h5 class="text-center font-medium text-lg md:text-xl mt-4 text-gray-700">3-Months Program</h5>
+                <ul class="text-base md:text-lg mt-4 space-y-2 text-gray-600">
+                    <li><i class="fa fa-calendar"></i> Start Date: November 18th, 2024</li>
+                    <li><i class="fa fa-laptop"></i> Platform: Zoom</li>
+                    <li><i class="fa fa-certificate"></i> Certification upon completion</li>
+                </ul>
+                <div class="mt-6 text-center">
+                    <a href="https://courses.guitarkaksha.com/courses/592512"
+                        class="bg-[#f1ab27] hover:bg-[#d99b1f] text-black rounded-full px-6 py-2 mt-4 inline-block transition-colors duration-300">
+                        More Details <i class="fa fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div
+                class="card bg-white text-gray-800 rounded-lg  p-4 w-[85%] md:w-[30vw] opacity-100 transform transition-transform duration-500 hover:scale-105 ">
+                <button class="bg-red-500 text-white rounded-full px-4 py-2 flex items-center gap-2">
+                    <i class="fa fa-video-camera"></i> Live Classes
+                </button>
+                <h4 class="text-center font-semibold text-xl md:text-2xl mt-4 text-gray-900">Advanced Guitar Program
+                </h4>
+                <div class="flex justify-between items-center mt-4">
+                    <span class="text-xl md:text-2xl font-bold text-gray-800">₹2999</span>
+                    <div class="relative text-lg text-gray-500">
+                        <span class="line-through text-green-400">₹4000</span>
+                    </div>
+                </div>
+                <h5 class="text-center font-medium text-lg md:text-xl mt-4 text-gray-700">3-Months Program</h5>
+                <ul class="text-base md:text-lg mt-4 space-y-2 text-gray-600">
+                    <li><i class="fa fa-calendar"></i> Start Date: November 13th, 2024</li>
+                    <li><i class="fa fa-laptop"></i> Platform: Zoom</li>
+                    <li><i class="fa fa-certificate"></i> Certification upon completion</li>
+                </ul>
+                <div class="mt-6 text-center">
+                    <a href="https://courses.guitarkaksha.com/courses/592512"
+                        class="bg-[#f1ab27] hover:bg-[#d99b1f] text-black rounded-full px-6 py-2 mt-4 inline-block transition-colors duration-300">
+                        More Details <i class="fa fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Student Success Section -->
+    <section class="py-16 bg-gray-100">
+        <div class="container mx-auto text-center">
+            <h2 class="text-6xl font-bold mb-8">Student <span class="text-green-600">Success</span> Stories</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Video 1 -->
+                <div class="p-6 bg-white rounded-lg shadow-md hover-shadow">
+                    <iframe width="100%" height="315" src="https://www.youtube.com/embed/3QZFM4gdlbA" frameborder="0"
+                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+                </div>
+
+                <!-- Video 2 -->
+                <div class="p-6 bg-white rounded-lg shadow-md hover-shadow">
+                    <iframe width="100%" height="315" src="https://www.youtube.com/embed/Ot_-meFLMaM" frameborder="0"
+                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+                </div>
+
+                <!-- Video 3 -->
+                <div class="p-6 bg-white rounded-lg shadow-md hover-shadow">
+                    <iframe width="100%" height="315" src="https://www.youtube.com/embed/jnitnfzgURc" frameborder="0"
+                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <!-- news section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto">
+            <h2 class="text-3xl md:text-5xl font-semibold text-center mb-10 text-gray-800">Guitar Kaksha In <span
+                    class="text-red-600">News</span></h2>
+
+            <div class="flex justify-center items-center gap-6 mt-[-3vh]">
+                <div
+                    class="flex items-center justify-center p-4 bg-gradient-to-r from-black via-gray-800 to-black text-white rounded-full shadow-lg transform hover:scale-110 transition-all duration-300">
+                    <i class="fas fa-crown text-3xl"></i>
+                </div>
+                <div
+                    class="flex items-center justify-center p-4 bg-gradient-to-r from-black via-gray-800 to-black text-white rounded-full shadow-lg transform hover:scale-110 transition-all duration-300">
+                    <i class="fas fa-guitar text-3xl"></i>
+                </div>
+            </div>
+        </div>
+
+        <!-- News Logos with Animation -->
+        <div
+            class="flex justify-center items-center gap-8 overflow-hidden animate__animated animate__fadeInUp animate__delay-1s section-to-animate">
+            <div class="flex items-center justify-center gap-12 w-full animate-marquee mt-4">
+
+                <!-- Dailyhunt Logo -->
+                <a href="https://m.dailyhunt.in/news/india/english/the+weekly+mail-epaper-dh4b1f18305bb0408ab5be309309f58705/know+why+guitar+kaksha+offers+affordable+guitar+lessons+to+everyone-newsid-dh4b1f18305bb0408ab5be309309f58705_5de350d07b9711ed9ffa36a3be15c517?sm=Y"
+                    class="transform hover:scale-110 transition-transform duration-300 mt-4">
+                    <img src="./assets/dailyhuntlogo.png" loading="lazy" alt="Dailyhunt Logo"
+                        class="h-[8vw] md:h-[6vw] max-w-full object-contain transform hover:scale-110 transition-transform duration-300">
+                </a>
+
+                <!-- The Startup Story Logo -->
+                <a href="https://thestartupstory.in/guitar-kaksha-opens-up-accessible-affordable-guitar-learning-for-all"
+                    class="transform hover:scale-110 transition-transform duration-300 mt-4">
+                    <img src="./assets/thestartupstorylogo.jpg" loading="lazy" alt="The Startup Story Logo"
+                        class="h-[8vw] md:h-[6vw] max-w-full object-contain transform hover:scale-110 transition-transform duration-300">
+                </a>
+
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- about section -->
+    <div class="bg-white 2xl:pt-[2vw] pt-[4vw]" id="social-media-followers">
+        <div class="flex items-center justify-center w-full relative flex-col pt-[8vw]">
+            <div class="flex items-center justify-center flex-col md:flex-row gap-[3vw] px-[2vw] w-[100%]">
+                <div class="z-[200] md:w-[45%] w-[80%]"><img loading="lazy" alt="guitar kaksha"
+                        class="w-full invert object-contain object-top" src="./assets/logo_white.png">
+                    <div class="absolute left-1/4 top-[50%] w-1/2 h-full animate-fall">
+                        <i class="fa fa-guitar text-4xl text-blue-500 animate-fall-icon delay-1s"></i>
+                        <i class="fa fa-music text-4xl text-pink-500 animate-fall-icon delay-2s"></i>
+                        <i class="fa fa-headphones text-4xl text-yellow-500 animate-fall-icon delay-3s"></i>
+                        <i class="fa fa-volume-up text-4xl text-green-500 animate-fall-icon delay-4s"></i>
+                        <i class="fa fa-play-circle text-4xl text-purple-500 animate-fall-icon delay-5s"></i>
+                    </div>
+                </div>
+                <h2 class="text-center md:mt-0 mt-[3vw] md:text-[2.3vw] md:w-[45%] text-[4.5vw] text-black w-[80%]">
+                    With a community of over <span
+                        class="followers-count h-[6.2vw] inline-block md:h-[3.5vw] relative"><span
+                            class="h-full absolute left-0 top-0 z-[100] bg-count-sheet bg-yellow-400 inline-block overflow-hidden w-0"
+                            style="width: 100%;"></span>
+                        <span class="flex inline-block overflow-hidden h-full"><span
+                                class="flex inline-block overflow-hidden h-full flex-col z-[200]"><span
+                                    class="h-full inline-block bg-yellow-400 followers-first-digit text-black"
+                                    style="translate: none; rotate: none; scale: none; transform: translate(0px, -700%);">1</span>
+                                <span class="h-full inline-block bg-yellow-400 followers-first-digit text-black"
+                                    style="translate: none; rotate: none; scale: none; transform: translate(0px, -700%);">2</span>
+                                <span class="h-full inline-block bg-yellow-400 followers-first-digit text-black"
+                                    style="translate: none; rotate: none; scale: none; transform: translate(0px, -700%);">3</span>
+                                <span class="h-full inline-block bg-yellow-400 followers-first-digit text-black"
+                                    style="translate: none; rotate: none; scale: none; transform: translate(0px, -700%);">4</span>
+                                <span class="h-full inline-block bg-yellow-400 followers-first-digit text-black"
+                                    style="translate: none; rotate: none; scale: none; transform: translate(0px, -700%);">5</span>
+                                <span class="h-full inline-block bg-yellow-400 followers-first-digit text-black"
+                                    style="translate: none; rotate: none; scale: none; transform: translate(0px, -700%);">6</span>
+                                <span class="h-full inline-block bg-yellow-400 followers-first-digit text-black"
+                                    style="translate: none; rotate: none; scale: none; transform: translate(0px, -700%);">7</span>
+                                <span class="h-full inline-block bg-yellow-400 followers-first-digit text-black"
+                                    style="translate: none; rotate: none; scale: none; transform: translate(0px, -700%);">8</span>
+                            </span><span class="text-black h-[3.5vw] z-[200]">0,000</span> </span></span>followers
+                    across all our social media platforms, <span class="text-[#ebb31a]">Guitar Kaksha</span> is where
+                    music lovers connect and grow together!</h2>
+            </div>
+            <div
+                class="flex justify-center gap-[3vw] px-[2vw] w-[100%] bg-gradient-to-l from-black via-black/30 to-black md:mt-[5vw] mt-[8vw] z-[100]">
+                <div class="hidden md:block w-[45%]"></div>
+                <div class="flex justify-center md:w-[45%] w-[80%]">
+                    <div class="flex items-center justify-center md:gap-[2vw] gap-[4.5vw] my-[2vw]"><a
+                            href="https://github.com/helloAmulya" class="magnet-effect" target="_blank"
+                            rel="noopener noreferrer"><i class="text-[6vw] md:text-[3vw] ri-github-circle-fill"></i>
+                        </a><a href="https://www.instagram.com/amulyaratna.1/" class="magnet-effect" target="_blank"
+                            rel="noopener noreferrer"><i class="text-[6vw] md:text-[3vw] ri-instagram-line"></i>
+                        </a><a href="https://www.youtube.com/channel/UCGdGMyN5DgvAhw-lnJbqyxQ" class="magnet-effect"
+                            target="_blank" rel="noopener noreferrer"><i
+                                class="text-[6vw] md:text-[3vw] ri-youtube-line"></i> </a><a
+                            href="https://twitter.com/helloAmulya" class="magnet-effect" target="_blank"
+                            rel="noopener noreferrer"><i class="text-[6vw] md:text-[2.7vw] ri-twitter-x-line"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- footer  -->
+    <footer class="text-white px-[5vw] bg-black md:px-[2vw] md:py-[3vw] py-[6vw] relative z-10 mt-[8vw]">
+        <div>
+            <div
+                class="flex justify-center flex-col md:flex-row mb-[4vw] md:mb-[2vw] md:space-x-[1vw] md:space-y-0 space-y-[2vw]">
+                <a href="https://guitarkaksha.com/terms.html"
+                    class="flex items-center justify-center md:text-[1.5vw] text-[4.5vw] hover:text-gray-300 px-[1vw] py-[0.5vw] transition-colors">Terms
+                    and Conditions</a>
+                <a href="https://guitarkaksha.com/privacy.html"
+                    class="flex items-center justify-center md:text-[1.5vw] text-[4.5vw] hover:text-gray-300 px-[1vw] py-[0.5vw] transition-colors">Privacy
+                    Policy</a>
+                <a href="https://guitarkaksha.com/refund.html"
+                    class="flex items-center justify-center md:text-[1.5vw] text-[4.5vw] hover:text-gray-300 px-[1vw] py-[0.5vw] transition-colors">Refund
+                    Policy</a>
+                <a href="https://guitarkaksha.com/blog-main.php"
+                    class="flex items-center justify-center md:text-[1.5vw] text-[4.5vw] hover:text-gray-300 px-[1vw] py-[0.5vw] transition-colors">Blogs</a>
+            </div>
+        </div>
+        <div class="flex items-center flex-col md:mt-[2vw] gap-[3vw] md:gap-[1vw] mt-[5vw]">
+            <p class="text-center md:text-[1.35vw] text-[#7c7f87] text-[3.5vw]">Copyright © 2024 Guitar Kaksha. All
+                rights reserved.</p>
+            <div class="flex md:gap-[1.5vw] gap-[4vw]">
+                <a href="https://www.github.com/helloAmulya" target="_blank" class="transition-colors  relative z-20">
+                    <i class="text-[6vw] md:text-[2vw] ri-github-fill"></i>
+                </a>
+                <a href="https://x.com/helloAmulya" target="_blank" class="transition-colors relative z-20">
+                    <i class="text-[6vw] md:text-[2vw] ri-twitter-fill"></i>
+                </a>
+                <a href="https://www.instagram.com/amulyaratna.1/" target="_blank"
+                    class="transition-colors relative z-20">
+                    <i class="text-[6vw] md:text-[2vw] ri-instagram-line"></i>
+                </a>
+            </div>
+            <div class="w-full gradient-line h-[0.2vw] md:h-[0.1vw] md:my-[2vw] my-[4vw]"></div>
+            <div class="flex items-center justify-center flex-col gap-[3vw] md:gap-[0.5vw]">
+                <div class="flex items-center md:text-[1.3vw] text-[3.5vw] text-white ">Made with
+                    <i class="md:text-[1.3vw] text-[3.5vw] mx-1 ri-heart-fill text-red-500"></i> by Amulya Ratna
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="scr.js"></script>
 </body>
 
 </html>

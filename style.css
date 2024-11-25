@@ -1,3 +1,4 @@
+/* 1. Animated Button */
 .animated-button {
     display: flex;
     align-items: center;
@@ -36,7 +37,6 @@
     transform: translateX(0.5vw);
 }
 
-
 @media (min-width: 768px) {
     .animated-button {
         height: 3.5vw;
@@ -52,7 +52,7 @@
     }
 }
 
-/* header section round images  */
+/* 2. Header Section Round Images */
 @keyframes smooth-fade-bottom-to-top {
     0% {
         clip-path: inset(100% 0 0 0);
@@ -70,31 +70,30 @@
     animation-delay: 0.2s;
 }
 
-
+/* 3. Card Styles */
 .card {
     border-radius: 10px;
     padding: 20px;
     backdrop-filter: blur(10px);
     box-shadow: 0 8px 24px rgba(27, 27, 31, 0.437);
-    /* Blue shadow */
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
 .card:hover {
     transform: scale(1.05);
-    /* box-shadow: 0 40px 860px rgba(103, 153, 228, 0.7); */
     box-shadow: 0 24px 64px rgba(80, 120, 179, 0.7), 0 8px 20px rgba(80, 120, 179, 0.7);
 }
 
+.invert {
+    filter: invert(1);
+}
 
-
-
+/* 4. Section Animations */
 .section-to-animate {
     opacity: 0;
     transform: translateY(20px);
     transition: opacity 2s ease-out, transform 2s ease-out;
 }
-
 
 .section-to-animate.is-visible {
     opacity: 1;
@@ -117,12 +116,11 @@
     }
 }
 
-
 .animate__delay-1s {
     animation-delay: 1.5s;
 }
 
-
+/* 5. Mobile Menu */
 .mobile-menu {
     position: fixed;
     top: 0;
@@ -153,8 +151,7 @@
     margin-bottom: 1rem;
 }
 
-
-/* music icons falling */
+/* 6. Music Icons Falling */
 @keyframes fall {
     0% {
         transform: translateY(0);
@@ -175,13 +172,11 @@
     position: absolute;
     left: 50%;
     top: 50%;
-    /* Position near the logo */
     transform: translateX(-50%);
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 5px;
-    /* Small gap between icons */
     animation: fall 3s ease-in-out infinite;
 }
 
@@ -214,3 +209,4 @@
 .fa {
     margin: 0 10px;
 }
+
