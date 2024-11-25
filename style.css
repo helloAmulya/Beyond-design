@@ -1,0 +1,216 @@
+.animated-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5vw;
+    height: 8vw;
+    width: fit-content;
+    padding: 0 4vw;
+    background: linear-gradient(90deg, #e94a2a, #ebb31a);
+    border-radius: 0.5rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: white;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.animated-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(90deg, #d93f20, #e99b18);
+}
+
+.animated-button span {
+    font-size: 5vw;
+    transition: color 0.3s ease;
+}
+
+.animated-button i {
+    font-size: 6vw;
+    font-weight: bold;
+    transform: translateX(0);
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.animated-button:hover i {
+    transform: translateX(0.5vw);
+}
+
+
+@media (min-width: 768px) {
+    .animated-button {
+        height: 3.5vw;
+        padding: 0 2vw;
+    }
+
+    .animated-button span {
+        font-size: 2vw;
+    }
+
+    .animated-button i {
+        font-size: 2.5vw;
+    }
+}
+
+/* header section round images  */
+@keyframes smooth-fade-bottom-to-top {
+    0% {
+        clip-path: inset(100% 0 0 0);
+        opacity: 0;
+    }
+
+    100% {
+        clip-path: inset(0 0 0 0);
+        opacity: 1;
+    }
+}
+
+.animate-reveal {
+    animation: smooth-fade-bottom-to-top 3.5s cubic-bezier(0.25, 0.8, 0.25, 1) forwards;
+    animation-delay: 0.2s;
+}
+
+
+.card {
+    border-radius: 10px;
+    padding: 20px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 24px rgba(27, 27, 31, 0.437);
+    /* Blue shadow */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    /* box-shadow: 0 40px 860px rgba(103, 153, 228, 0.7); */
+    box-shadow: 0 24px 64px rgba(80, 120, 179, 0.7), 0 8px 20px rgba(80, 120, 179, 0.7);
+}
+
+
+
+
+.section-to-animate {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 2s ease-out, transform 2s ease-out;
+}
+
+
+.section-to-animate.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.animate__fadeInUp {
+    animation: fadeInUp 2s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+.animate__delay-1s {
+    animation-delay: 1.5s;
+}
+
+
+.mobile-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60vh;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding-top: 2rem;
+    overflow-y: auto;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+    z-index: 999999;
+}
+
+.mobile-menu.open {
+    transform: translateX(0);
+}
+
+.mobile-nav-item {
+    font-size: 1.5rem;
+    padding: 0.8rem 0;
+    text-align: center;
+    border-bottom: 1px solid #fff;
+}
+
+.mobile-menu .logo img {
+    width: 40%;
+    margin-bottom: 1rem;
+}
+
+
+/* music icons falling */
+@keyframes fall {
+    0% {
+        transform: translateY(0);
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(16vh);
+        opacity: 1;
+    }
+}
+
+.animate-fall {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    /* Position near the logo */
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    /* Small gap between icons */
+    animation: fall 3s ease-in-out infinite;
+}
+
+.animate-fall-icon {
+    display: inline-block;
+    font-size: 4rem;
+    animation: fall 3s ease-in-out infinite;
+}
+
+.animate-fall-icon.delay-1s {
+    animation-delay: 1s;
+}
+
+.animate-fall-icon.delay-2s {
+    animation-delay: 2s;
+}
+
+.animate-fall-icon.delay-3s {
+    animation-delay: 3s;
+}
+
+.animate-fall-icon.delay-4s {
+    animation-delay: 4s;
+}
+
+.animate-fall-icon.delay-5s {
+    animation-delay: 5s;
+}
+
+.fa {
+    margin: 0 10px;
+}
